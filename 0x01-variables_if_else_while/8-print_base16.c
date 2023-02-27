@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 
 /**
@@ -10,9 +11,9 @@ int main(void)
 	int n;
 	char ab;
 
-	for (n = 35; n < 45; n++)
+	for (n = 0; n < 10; n++)
 	{
-		putchar(n);
+		putchar((n % 10) + '0');
 	}
 	for (ab = 'a'; ab <= 'f'; ab++)
 	{
