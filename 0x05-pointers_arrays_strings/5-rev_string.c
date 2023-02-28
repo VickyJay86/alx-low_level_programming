@@ -9,7 +9,7 @@
   */
 void rev_string(char *str)
 {
-	char *d = str[0];
+	char d = str[0];
 	int counter = 0;
 	int a;
 
@@ -18,9 +18,9 @@ void rev_string(char *str)
 	for (a = 0; a < counter; a++)
 	{
 		counter--;
-		*d = str[a];
+		d = str[a];
 		str[a] = str[counter];
-		str[counter] = *d;
+		str[counter] = d;
 	}
 }
 
