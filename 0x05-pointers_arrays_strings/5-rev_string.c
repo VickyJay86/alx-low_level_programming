@@ -9,24 +9,18 @@
   */
 void rev_string(char *str)
 {
-	int a = 0;
-	int b = 0;
-	char *d = str;
-	int c;
+	char *d = str[0];
+	int counter = 0;
+	int a;
 
-	while (*d != '\0')
+	while (str[counter] != '\0')
+	counter++;
+	for (a = 0; a < counter; a++)
 	{
-		d++;
-		a++;
+		counter--;
+		*d = str[a];
+		str[a] = str[counter];
+		str[counter] = *d;
 	}
-	b = a - 1;
-	for (c = 0 ; c <= b ; c++)
-	{
-		if (c % 2 == 0)
-	{
-		_putchar(str[c]);
-	}
-	}
-	_putchar('\n');
 }
 
