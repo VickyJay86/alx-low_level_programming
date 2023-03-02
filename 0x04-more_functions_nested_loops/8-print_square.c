@@ -6,7 +6,7 @@
  * @s: size of the square
  * Return: 0(success)
  */
-void print_square(int s)
+void print_square(int size)
 {
 	if (s <= 0)
 	{
