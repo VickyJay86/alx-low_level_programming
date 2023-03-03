@@ -1,8 +1,5 @@
-#include <stdio.h>
-/**
- * main - check the code
- * Return: 0
- */
+#include "main.h"
+
 int main(void)
 {
 	int n;
