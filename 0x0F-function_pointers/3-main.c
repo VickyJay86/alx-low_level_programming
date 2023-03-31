@@ -1,6 +1,7 @@
-#include "3-calc.h"
+#includ7e "3-calc.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "function_pointers.h"
 
 /**
 * main - Prints the result of simple operations.
@@ -9,9 +10,11 @@
 *
 * Return: 0 (success)
 */
-int main(int argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
+
 {
-	int (*opt)(int, int);
+	int n1, n2;
+	char *opt;
 
 	if (argc != 4)
 	{
@@ -19,14 +22,24 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	opt = get_op_func(argv[2]);
+	n1 = atoi(argv[1]);
+	opt = argv[2];
+	n2 = atoi(argv[3]);
 
-	if (!opt)
+	if (get_op_func(opt) == NULL || opt[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	printf("%d\n", opt(atoi(argv[1]), atoi(argv[3])));
+	if ((*opt == '/' && n2 == 0) ||
+			(*opt == '%' && n2 == 0))
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	printf("%d\n", get_op_func(op)(n1, n2));
+
 	return (0);
 }
